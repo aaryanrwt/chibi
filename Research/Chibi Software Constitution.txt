@@ -1,0 +1,597 @@
+# Chibi Software Constitution
+
+## Cover Page
+
+# Chibi
+
+**Tagline:** The AI Kubernetes SRE that lives inside your terminal.
+
+**Version:** 1.0
+
+**Open Source Notice:** This project is completely Open Source.
+
+**Research & Product Vision by Aaryan Rawat**
+
+**Authored by Manus AI**
+
+---
+
+## Table of Contents
+
+1. [Executive Summary](#executive_summary)
+2. [Project Constitution](#project_constitution)
+3. [Market Research](#market_research)
+4. [Unique Selling Proposition (USP)](#unique_selling_proposition_usp)
+5. [Product Requirements Document (PRD)](#product_requirements_document_prd)
+6. [Technical Requirements Document (TRD)](#technical_requirements_document_trd)
+7. [System Architecture](#system_architecture)
+8. [Core Components](#core_components)
+9. [Operational Standards](#operational_standards)
+10. [Version Planning](#version_planning)
+11. [The Chibi Manifesto](#the_chibi_manifesto)
+
+---
+
+<a name="executive_summary"></a>
+## Executive Summary
+
+### Why Chibi Exists
+
+Chibi emerges from a critical need within the modern cloud-native landscape: the increasing complexity of Kubernetes operations. As organizations embrace microservices and containerization, managing Kubernetes clusters has become a significant challenge for developers and SREs alike. Existing tools often fall short in providing comprehensive, intelligent assistance, leading to prolonged debugging cycles, operational overhead, and a steep learning curve for new engineers. Chibi aims to bridge this gap by offering an AI-powered, developer-first CLI assistant that streamlines Kubernetes management and troubleshooting.
+
+### The Current Kubernetes Ecosystem
+
+The Kubernetes ecosystem is vast and rapidly evolving, offering a plethora of tools for deployment, monitoring, and management. However, this abundance often leads to fragmentation and complexity. Developers frequently juggle multiple tools—from `kubectl` for command-line interactions to various dashboards like Lens and k9s for visual insights—each with its own learning curve and operational nuances. While these tools provide essential functionalities, they often lack the integrated intelligence required to proactively diagnose issues, explain complex behaviors, or generate resources contextually.
+
+### Problems Developers Face
+
+Developers and SREs routinely encounter several pain points in their daily Kubernetes workflows. These include the overwhelming number of `kubectl` commands, the intricate nature of YAML configurations, the cognitive load of context switching between different tools, and the manual effort involved in debugging incidents. The sheer volume of information—logs, events, metrics—can lead to information overload, making it difficult to pinpoint root causes quickly. Furthermore, while AI has begun to permeate development tools, its application in real-time Kubernetes SRE assistance, particularly within the terminal, remains nascent and often limited to generic code generation rather than deep operational intelligence.
+
+### Why AI Inside Kubernetes is Valuable
+
+Integrating AI directly into the Kubernetes CLI offers a transformative approach to SRE. An intelligent assistant can understand the context of a cluster, diagnose production problems by correlating disparate data points, explain complex infrastructure concepts in natural language, and generate accurate Kubernetes resources on demand. This not only accelerates incident response and reduces mean time to resolution (MTTR) but also democratizes Kubernetes expertise, making advanced operations accessible to a broader range of engineers. AI can act as a force multiplier, allowing teams to manage larger, more complex environments with greater efficiency and fewer errors.
+
+### Long-Term Vision
+
+Chibi's long-term vision is to become the indispensable companion for every Kubernetes engineer. We envision a future where Chibi evolves beyond a mere assistant to a proactive, self-improving entity that anticipates operational challenges, optimizes resource utilization, and continuously learns from real-world incidents. By fostering a vibrant open-source community, Chibi aims to build a resilient, extensible platform that adapts to future cloud-native innovations, ultimately creating a more intelligent, beautiful, and developer-centric Kubernetes experience.
+
+---
+
+<a name="project_constitution"></a>
+## Project Constitution
+
+### Mission
+
+To create the world's most intelligent, beautiful, developer-first Kubernetes CLI assistant that understands clusters, diagnoses production problems, explains infrastructure, generates Kubernetes resources, and assists engineers using multiple AI providers.
+
+### Vision
+
+To empower every Kubernetes engineer with an intuitive, powerful, and intelligent terminal experience that simplifies complex operations, accelerates troubleshooting, and fosters a deeper understanding of cloud-native environments.
+
+### Core Philosophy
+
+Chibi is built upon the principles of **intelligence**, **simplicity**, and **extensibility**. We believe that complex systems should be managed with intelligent assistance, that developer tools should be intuitive and reduce cognitive load, and that an open-source project thrives on a flexible architecture that encourages community contributions and innovation.
+
+### Engineering Principles
+
+1.  **Reliability First:** All components must be robust, fault-tolerant, and designed for high availability. Operational stability is paramount.
+2.  **Performance Driven:** The CLI must be fast, responsive, and efficient, minimizing latency and resource consumption.
+3.  **Security by Design:** Security considerations are integrated into every stage of development, from architecture to implementation, ensuring data protection and secure operations.
+4.  **Modularity and Composability:** The codebase should be modular, with clearly defined interfaces, allowing for independent development, testing, and easy integration of new features and plugins.
+5.  **Test-Driven Development:** Comprehensive testing, including unit, integration, and end-to-end tests, is essential to ensure code quality and prevent regressions.
+6.  **Maintainability:** Code should be clean, well-documented, and adhere to established coding standards to facilitate long-term maintenance and collaboration.
+
+### Design Principles
+
+1.  **Developer-Centric UX:** The user experience must prioritize the needs and workflows of Kubernetes developers, offering intuitive interactions and clear feedback.
+2.  **Terminal Native:** Embrace the power and efficiency of the terminal, providing a rich, interactive, and visually appealing command-line interface.
+3.  **Clarity and Conciseness:** Information presented to the user should be clear, concise, and actionable, avoiding jargon where possible and providing explanations when necessary.
+4.  **Consistency:** Maintain a consistent design language and interaction patterns across all commands and features to reduce cognitive load and improve learnability.
+5.  **Aesthetics:** Strive for a beautiful and modern aesthetic that enhances the user's terminal experience without sacrificing functionality.
+
+### Developer Experience Principles
+
+1.  **Ease of Installation and Setup:** Chibi should be easy to install, configure, and get started with, minimizing friction for new users.
+2.  **Contextual Assistance:** Provide intelligent, context-aware suggestions and help within the CLI to guide users through complex tasks.
+3.  **Extensibility for Developers:** Offer a robust plugin system and well-documented APIs that enable developers to extend Chibi's capabilities and integrate with their existing toolchains.
+4.  **Feedback Rich:** Provide immediate and clear feedback on command execution, AI responses, and system status.
+5.  **Empowering Automation:** Enable developers to automate repetitive tasks and integrate Chibi into their CI/CD pipelines and scripts.
+
+### Open Source Principles
+
+1.  **Transparency:** All development, decision-making, and communication will be conducted openly and publicly.
+2.  **Community-Driven:** The project's direction and evolution will be shaped by the active participation and contributions of its community.
+3.  **Inclusivity:** Foster a welcoming and inclusive environment for contributors from all backgrounds and experience levels.
+4.  **Meritocracy:** Contributions will be judged on their technical merit and alignment with the project's mission and principles.
+5.  **Sustainable Development:** Ensure the long-term health and viability of the project through clear governance, responsible resource management, and a focus on maintainability.
+
+### Community Principles
+
+1.  **Respect and Empathy:** Treat all community members with respect, empathy, and professionalism.
+2.  **Collaboration over Competition:** Encourage collaborative problem-solving and knowledge sharing.
+3.  **Constructive Feedback:** Provide and receive feedback in a constructive and supportive manner.
+4.  **Active Engagement:** Foster an active and engaged community through regular communication, events, and opportunities for participation.
+
+### Contribution Philosophy
+
+Chibi welcomes contributions of all forms—code, documentation, bug reports, feature requests, and community support. We believe that a diverse range of perspectives and skills enriches the project. Contributions should align with the project's mission, adhere to established guidelines, and be submitted through a transparent and well-defined process.
+
+### Security Philosophy
+
+Security is a foundational pillar of Chibi. We adopt a proactive, defense-in-depth approach, focusing on:
+
+1.  **Least Privilege:** Operating with the minimum necessary permissions.
+2.  **Secure Defaults:** Ensuring out-of-the-box configurations are secure.
+3.  **Threat Modeling:** Continuously identifying and mitigating potential vulnerabilities.
+4.  **Prompt Injection Protection:** Implementing robust measures to safeguard against malicious AI prompts.
+5.  **Plugin Sandboxing:** Isolating plugins to prevent unauthorized access and maintain system integrity.
+6.  **Supply Chain Security:** Verifying the integrity of all dependencies and build processes.
+
+### Reliability Philosophy
+
+Chibi is designed for unwavering reliability. Our philosophy centers on:
+
+1.  **Resilience:** Building components that can withstand failures and recover gracefully.
+2.  **Observability:** Providing comprehensive logging, metrics, and tracing to understand system behavior.
+3.  **Automated Testing:** Extensive automated testing to catch issues early in the development cycle.
+4.  **Graceful Degradation:** Ensuring core functionalities remain available even under degraded conditions.
+5.  **Proactive Monitoring:** Implementing monitoring and alerting to detect and address potential issues before they impact users.
+
+### Performance Philosophy
+
+Performance is critical for a developer-first CLI. Our philosophy emphasizes:
+
+1.  **Speed and Responsiveness:** Optimizing for minimal latency in all interactions, from command execution to AI responses.
+2.  **Efficient Resource Utilization:** Minimizing CPU, memory, and network consumption.
+3.  **Scalability:** Designing the architecture to handle increasing workloads and data volumes efficiently.
+4.  **Caching Strategies:** Implementing intelligent caching mechanisms to reduce redundant computations and API calls.
+5.  **Streaming First:** Prioritizing streaming for AI responses and data output to provide immediate feedback to the user.
+
+---
+
+<a name="market_research"></a>
+## Market Research
+
+This section provides a detailed analysis of existing Kubernetes CLI tools and AI-powered SRE assistants, highlighting their strengths, weaknesses, market positioning, target audience, pricing, architecture, developer experience, and missing features. This analysis will inform Chibi's unique selling propositions and strategic positioning.
+
+### Competitor Analysis
+
+#### 1. kubectl
+
+`kubectl` is the official command-line tool for Kubernetes, allowing users to run commands against Kubernetes clusters. It is the foundational tool for interacting with Kubernetes.
+
+*   **Strengths:** Universal adoption, direct interaction with Kubernetes API, highly flexible and powerful, open-source, well-documented.
+*   **Weaknesses:** Steep learning curve, requires memorization of numerous commands and flags, verbose output, lacks visual representation, no inherent AI capabilities, manual debugging process.
+*   **Market Positioning:** The de facto standard for Kubernetes interaction, essential for all Kubernetes users.
+*   **Target Audience:** All Kubernetes users, from beginners to advanced administrators and developers.
+*   **Pricing:** Free (open-source).
+*   **Architecture:** Client-side CLI tool communicating directly with the Kubernetes API server.
+*   **Developer Experience:** Powerful but often cumbersome due to its command-line nature and lack of visual aids.
+*   **Missing Features:** Integrated AI for diagnostics, visual dashboards, simplified workflows, multi-cluster management in a unified view.
+*   **Where Chibi is Better:** Chibi aims to augment `kubectl` by providing an intelligent, user-friendly layer that simplifies complex operations, offers AI-driven insights, and enhances the terminal experience.
+
+#### 2. k9s
+
+k9s is a terminal-based UI (TUI) for Kubernetes, offering a curses-driven interface to navigate, observe, and manage applications deployed in Kubernetes. It provides a real-time view of cluster activity.
+
+*   **Strengths:** Fast and lightweight, keyboard-driven efficiency, real-time cluster visibility, good for single-cluster management, open-source.
+*   **Weaknesses:** Terminal-only (no web UI), limited multi-cluster support, no built-in AI capabilities, lacks advanced collaboration features, no compliance or security scanning.
+*   **Market Positioning:** Popular among CLI power users who prefer a keyboard-first approach for single-cluster management.
+*   **Target Audience:** Developers and SREs who are comfortable with terminal environments and manage individual Kubernetes clusters.
+*   **Pricing:** Free (open-source).
+*   **Architecture:** Standalone Go application running in the terminal, interacting with Kubernetes API.
+*   **Developer Experience:** Highly efficient for experienced users, but can be overwhelming for beginners due to its TUI nature.
+*   **Missing Features:** AI-powered troubleshooting, shared dashboards, advanced alerting, comprehensive security features, multi-cluster unified view.
+*   **Where Chibi is Better:** Chibi offers a richer, AI-augmented terminal experience with multi-cluster capabilities, intelligent diagnostics, and a focus on simplifying complex SRE workflows, going beyond k9s's observational strengths.
+
+#### 3. Lens (and Freelens)
+
+Lens is a popular desktop IDE for Kubernetes, providing a rich graphical interface for managing and observing clusters. Freelens is a community fork of Open Lens, offering a similar experience with an MIT license.
+
+*   **Strengths:** Visual and intuitive UI, easy cluster navigation, good for individual exploration, supports extensions, desktop application for local control.
+*   **Weaknesses:** Desktop-only architecture (limits collaboration), no built-in alerting or on-call management, lacks compliance/security scanning, no native AI assistance, licensing concerns post-Mirantis acquisition (for Lens).
+*   **Market Positioning:** Widely adopted as a desktop IDE for individual Kubernetes exploration and management.
+*   **Target Audience:** Individual developers and cluster administrators who prefer a graphical interface.
+*   **Pricing:** Lens has paid tiers with eligibility limits for personal use; Freelens is free (open-source).
+*   **Architecture:** Electron-based desktop application, interacting with Kubernetes API.
+*   **Developer Experience:** Simplifies Kubernetes for individuals through a visual interface, but can hinder team collaboration.
+*   **Missing Features:** Team collaboration features, centralized views, AI-powered troubleshooting, comprehensive SRE platform capabilities.
+*   **Where Chibi is Better:** Chibi provides an AI-native terminal experience that is designed for both individual efficiency and team collaboration, offering deeper SRE capabilities and multi-provider AI integration that Lens lacks.
+
+#### 4. Headlamp
+
+Headlamp is an open-source, web-based Kubernetes UI under the CNCF Sandbox, aiming to be an extensible replacement for the Kubernetes Dashboard.
+
+*   **Strengths:** Web-based (accessible from any browser), extensible plugin system, open-source with CNCF backing, cleaner UI than traditional dashboards.
+*   **Weaknesses:** Basic operational features, limited integrated SRE capabilities, no native AI, plugin ecosystem still maturing, primarily a visualizer rather than an active SRE tool.
+*   **Market Positioning:** A vendor-neutral, extensible web UI for Kubernetes, suitable for teams prioritizing open governance and custom UI plugins.
+*   **Target Audience:** Teams seeking a web-based, open-source Kubernetes dashboard with extensibility.
+*   **Pricing:** Free (open-source).
+*   **Architecture:** Web application, can be deployed in-cluster or as a desktop app.
+*   **Developer Experience:** Provides a modern visual interface, but requires additional tools for advanced SRE workflows.
+*   **Missing Features:** Deep AI integration for diagnostics, advanced troubleshooting, incident response automation, comprehensive SRE platform features.
+*   **Where Chibi is Better:** Chibi offers a more integrated and intelligent SRE platform with AI-driven insights and actions directly in the terminal, providing proactive assistance beyond Headlamp's visualization capabilities.
+
+#### 5. Radar
+
+Radar is a modern Kubernetes UI offering a polished desktop app, local browser, in-cluster, and Cloud delivery, with an integrated operational model and AI agents via MCP.
+
+*   **Strengths:** Polished UI, integrated operational model, multi-delivery modes (desktop, browser, cloud), strong AI agent integration via MCP, multi-cluster view, retained event/change history, team collaboration features, open-source core.
+*   **Weaknesses:** Pricing model (per cluster) can be expensive, newer platform compared to established tools, specific use cases might be better served by simpler tools.
+*   **Market Positioning:** A comprehensive, modern Kubernetes UI with strong AI and collaboration features, positioned as a modern default for integrated operations.
+*   **Target Audience:** Teams requiring integrated operations, AI assistance, and multi-cluster management across various deployment models.
+*   **Pricing:** Per cluster (OSS unlimited, Cloud 3 clusters free tier).
+*   **Architecture:** Go engine running locally, in-cluster, or through Cloud, with a desktop app and web UI.
+*   **Developer Experience:** Provides a rich, integrated experience with AI assistance, suitable for complex operational needs.
+*   **Missing Features:** While comprehensive, its focus on a broader operational model might mean less terminal-native depth compared to a specialized CLI.
+*   **Where Chibi is Better:** Chibi focuses specifically on a terminal-native, AI-first SRE experience, aiming for unparalleled efficiency and intelligence within the CLI, potentially offering a more streamlined and focused developer experience for terminal-centric users.
+
+#### 6. SRExpert
+
+SRExpert is a unified Kubernetes management platform that replaces multiple tools with a single web-based interface, focusing on SRE and DevOps teams.
+
+*   **Strengths:** Multi-cluster unified dashboard, 6+ AI models for troubleshooting, built-in security scanning and compliance automation, smart alerting, full Helm lifecycle management, Zero Firewall architecture, web-based with team collaboration.
+*   **Weaknesses:** Kubernetes-only (no general infrastructure), newer platform, pricing can be significant for larger teams.
+*   **Market Positioning:** A comprehensive, AI-driven SRE platform for Kubernetes, targeting teams that have outgrown desktop IDEs.
+*   **Target Audience:** SRE and DevOps teams managing multiple Kubernetes clusters who need an all-in-one platform.
+*   **Pricing:** Tiered pricing (Professional, Business, Enterprise) with a free Starter tier.
+*   **Architecture:** Web-based platform with agents deployed in clusters.
+*   **Developer Experience:** Streamlined operational workflow with AI assistance, but primarily web-based rather than terminal-native.
+*   **Missing Features:** Terminal-native deep interaction, full control over AI model selection and prompt engineering within the CLI.
+*   **Where Chibi is Better:** Chibi's core strength lies in its terminal-native, AI-first approach, offering a highly interactive and customizable experience directly within the CLI, which complements SRExpert's web-based platform.
+
+#### 7. Kubeshark
+
+Kubeshark is an open-source network observability platform for Kubernetes, providing real-time, cluster-wide visibility into network traffic, often described as Wireshark for Kubernetes.
+
+*   **Strengths:** Real-time network traffic visualization, deep packet inspection, Kubernetes-specific context for network activities, zero code changes required, TLS decryption, multi-protocol support, open-source.
+*   **Weaknesses:** Primarily focused on network observability, not a general-purpose SRE tool, no direct AI-driven troubleshooting or resource generation, limited broader SRE features like cost optimization or full CI/CD.
+*   **Market Positioning:** Specialized tool for Kubernetes network troubleshooting and observability.
+*   **Target Audience:** DevOps and network engineers who need deep insights into Kubernetes network traffic.
+*   **Pricing:** Free (open-source).
+*   **Architecture:** Deploys as a DaemonSet in the Kubernetes cluster, using eBPF for traffic capture and a web-based dashboard.
+*   **Developer Experience:** Excellent for network-level debugging, but requires context switching for other SRE tasks.
+*   **Missing Features:** Comprehensive SRE platform capabilities, AI-driven diagnostics beyond network issues, resource generation, proactive incident response.
+*   **Where Chibi is Better:** While Kubeshark excels at network visibility, Chibi provides a holistic AI-powered SRE assistant that integrates diagnostics across all Kubernetes layers, including network, and offers proactive solutions and resource generation.
+
+#### 8. Komodor
+
+Komodor is an autonomous AI SRE platform for Kubernetes, offering visualization, troubleshooting, and optimization capabilities.
+
+*   **Strengths:** Unified web interface for managing Kubernetes resources, AI-driven root cause analysis (Klaudia Agentic AI), cost optimization features, automated alerts, integration with various tools (GitLab, Slack, Sentry), multi-cluster management.
+*   **Weaknesses:** SaaS-only (no self-hosted UI), free tier limitations, pricing can be high for larger teams, does not support creating new resources or deploying applications from scratch.
+*   **Market Positioning:** A comprehensive AI-driven SRE platform for Kubernetes, aiming to reduce MTTR and optimize costs.
+*   **Target Audience:** SRE and DevOps teams seeking an all-in-one platform for Kubernetes management, troubleshooting, and cost optimization.
+*   **Pricing:** Freemium (limited features), Business, Enterprise (custom pricing).
+*   **Architecture:** SaaS platform with an agent deployed in the Kubernetes cluster.
+*   **Developer Experience:** Streamlined web-based experience for managing and troubleshooting Kubernetes, with AI assistance.
+*   **Missing Features:** Terminal-native interaction, full control over AI model selection and prompt engineering within the CLI, open-source core for full transparency and customization.
+*   **Where Chibi is Better:** Chibi focuses on a terminal-native, open-source approach, providing engineers with direct control and a highly customizable AI experience within their preferred CLI environment, complementing Komodor's SaaS offering.
+
+#### 9. Kubecost
+
+Kubecost provides cost monitoring and optimization for Kubernetes environments, offering real-time visibility into spend and recommendations for savings.
+
+*   **Strengths:** Granular cost allocation by Kubernetes resources (pods, nodes, namespaces, labels), real-time cost visibility, integration with cloud billing APIs, optimization recommendations, alerts and governance features, open-source core (OpenCost).
+*   **Weaknesses:** Primarily focused on cost management, limited broader SRE features, daily cost granularity can limit visibility into short-term spikes, free tier uses estimated prices, scalability challenges in very large environments.
+*   **Market Positioning:** Leading solution for Kubernetes cost management and optimization.
+*   **Target Audience:** FinOps, DevOps, and platform engineering teams focused on controlling and optimizing Kubernetes cloud spend.
+*   **Pricing:** Free (Foundations tier up to 250 cores), Enterprise Self-Hosted, Enterprise Cloud (SaaS), AWS Marketplace options.
+*   **Architecture:** Runs inside Kubernetes cluster, uses Prometheus for metrics, integrates with cloud billing APIs.
+*   **Developer Experience:** Provides clear financial insights, but requires integration with other tools for full SRE capabilities.
+*   **Missing Features:** Comprehensive AI-driven diagnostics, proactive incident response, resource generation, terminal-native SRE assistance.
+*   **Where Chibi is Better:** While Kubecost is essential for financial oversight, Chibi provides a more operational, AI-driven SRE assistant that can directly influence resource allocation and troubleshoot issues, complementing cost-saving efforts with intelligent action.
+
+#### 10. Devtron
+
+Devtron is an AI-native Kubernetes management platform that unifies CI/CD, GitOps, security, observability, FinOps, and AI/ML workload management.
+
+*   **Strengths:** Unified platform for various Kubernetes operations, AI-driven SRE (Agentic SRE), cost visibility and optimization, robust CI/CD and GitOps, security and governance features, multi-cluster management, supports ARM and AMD architectures.
+*   **Weaknesses:** Freemium plan limited to one cluster, enterprise features require paid plans, can be complex due to its comprehensive nature.
+*   **Market Positioning:** An all-in-one AI-native platform for production Kubernetes teams, aiming to simplify operations and speed delivery.
+*   **Target Audience:** Production Kubernetes teams seeking a unified platform for app and infrastructure management with AI assistance.
+*   **Pricing:** Freemium (one cluster), Starter, Growth (paid plans).
+*   **Architecture:** Comprehensive platform deployed in Kubernetes, integrating with various tools.
+*   **Developer Experience:** Aims to simplify Kubernetes operations through a unified UI and AI assistance, reducing YAML fatigue.
+*   **Missing Features:** While comprehensive, its web-based UI might not offer the same terminal-native fluidity and direct control that a specialized CLI provides.
+*   **Where Chibi is Better:** Chibi focuses on enhancing the terminal experience with AI, providing immediate, interactive assistance for engineers who prefer to operate directly from the command line, offering a complementary approach to Devtron's broader platform.
+
+#### 11. Portainer
+
+Portainer is a universal container management platform that simplifies the deployment, management, and troubleshooting of containerized applications across various environments, including Kubernetes.
+
+*   **Strengths:** User-friendly GUI, supports Docker, Docker Swarm, and Kubernetes, easy deployment and management of applications, role-based access control (RBAC), GitOps capabilities, free Community Edition.
+*   **Weaknesses:** Primarily a GUI-driven tool, limited AI capabilities, not specifically designed for deep SRE automation or AI-driven diagnostics, enterprise features are part of paid Business Edition.
+*   **Market Positioning:** A simple, visual management solution for containerized environments.
+*   **Target Audience:** Teams and individuals looking for an easy-to-use graphical interface to manage their container infrastructure.
+*   **Pricing:** Free (Community Edition), Business Edition (paid, node-based licensing, 3 nodes free).
+*   **Architecture:** Agent-based deployment with a central web UI.
+*   **Developer Experience:** Simplifies container management through a visual interface, reducing the need for complex CLI commands.
+*   **Missing Features:** Advanced AI-driven SRE capabilities, deep diagnostic intelligence, proactive incident analysis, terminal-native AI assistance.
+*   **Where Chibi is Better:** Chibi offers a specialized, AI-powered terminal experience for Kubernetes SRE, providing intelligent diagnostics and automation that go beyond Portainer's general container management capabilities.
+
+#### 12. Aider
+
+Aider is an AI coding agent that operates within the terminal, focusing on git-native workflows.
+
+*   **Strengths:** Terminal-native, git-integrated, good for code generation and refactoring, open-source.
+*   **Weaknesses:** Primarily focused on code generation and editing, not specifically designed for Kubernetes SRE, lacks deep Kubernetes context awareness, no direct SRE-specific features like cluster diagnostics or incident response.
+*   **Market Positioning:** An AI assistant for developers who prefer to work within the terminal and leverage AI for coding tasks.
+*   **Target Audience:** Developers who want AI assistance for coding directly in their terminal.
+*   **Pricing:** Depends on the underlying AI model used (e.g., OpenAI, Claude).
+*   **Architecture:** CLI tool that interacts with AI models and the local filesystem/git repository.
+*   **Developer Experience:** Enhances coding productivity within the terminal, but not tailored for Kubernetes operational tasks.
+*   **Missing Features:** Kubernetes-specific diagnostics, resource management, incident analysis, multi-cluster visibility.
+*   **Where Chibi is Better:** Chibi is purpose-built for Kubernetes SRE, offering deep contextual understanding of clusters and AI-driven actions tailored for operational tasks, whereas Aider is a more general coding assistant.
+
+#### 13. OpenCode
+
+OpenCode is an open-source AI coding agent with a large community, focusing on code generation and review.
+
+*   **Strengths:** Open-source, large community, good for code generation and review, supports various AI models.
+*   **Weaknesses:** General-purpose coding assistant, not specialized for Kubernetes SRE, lacks direct integration with Kubernetes operational workflows, no built-in SRE-specific features.
+*   **Market Positioning:** A popular open-source AI coding agent for general development tasks.
+*   **Target Audience:** Developers seeking an open-source AI assistant for coding and code review.
+*   **Pricing:** Free (open-source), but costs depend on the integrated AI models.
+*   **Architecture:** Open-source project with integrations to various AI models.
+*   **Developer Experience:** Aids in coding and code quality, but not designed for real-time Kubernetes operational challenges.
+*   **Missing Features:** Kubernetes-native intelligence, real-time cluster diagnostics, incident response automation, specialized SRE workflows.
+*   **Where Chibi is Better:** Chibi provides a specialized, AI-powered terminal experience for Kubernetes SRE, offering targeted intelligence and automation for managing and troubleshooting clusters, which is beyond the scope of general coding assistants like OpenCode.
+
+### Comparison Table of Key Kubernetes Tools
+
+| Feature                       | kubectl     | k9s         | Lens/Freelens | Headlamp    | Radar       | SRExpert    | Kubeshark   | Komodor     | Kubecost    | Devtron     | Portainer   | Chibi (Target) |
+| :---------------------------- | :---------- | :---------- | :------------ | :---------- | :---------- | :---------- | :---------- | :---------- | :---------- | :---------- | :---------- | :------------- |
+| **Type**                      | CLI         | TUI         | Desktop IDE   | Web UI      | Hybrid      | Web Platform| Network Obs.| SaaS SRE    | Cost Mgmt.  | Unified Plat.| Container Mgmt.| AI K8s SRE CLI |
+| **AI Capabilities**           | No          | No          | No            | No          | Yes (MCP)   | Yes (6+ models)| No          | Yes (Klaudia)| No          | Yes (Agentic)| No          | **Yes (Multi-provider, Deep K8s Context)** |
+| **Terminal Native**           | Yes         | Yes         | No            | No          | Partial     | No          | Partial     | No          | No          | No          | No          | **Yes**        |
+| **Multi-Cluster View**        | No          | Limited     | Limited       | Yes         | Yes         | Yes         | No          | Yes         | Yes         | Yes         | Yes         | **Yes**        |
+| **Real-time Diagnostics**     | Manual      | Visual      | Visual        | Visual      | Yes         | Yes         | Network     | Yes         | No          | Yes         | No          | **Yes (AI-driven)** |
+| **Resource Generation**       | Manual      | No          | No            | No          | No          | No          | No          | No          | No          | No          | No          | **Yes (AI-driven)** |
+| **Incident Response**         | Manual      | Manual      | Manual        | Manual      | Yes         | Yes         | Network     | Yes         | No          | Yes         | Manual      | **Yes (AI-driven Automation)** |
+| **Cost Optimization**         | No          | No          | No            | No          | No          | Yes         | No          | Yes         | Yes         | Yes         | No          | **Indirect (via efficiency)** |
+| **Open Source Core**          | Yes         | Yes         | Yes (Freelens)| Yes         | Yes         | No          | Yes         | No          | Yes (OpenCost)| Yes         | Yes (CE)    | **Yes**        |
+| **Extensibility (Plugins)**   | No          | Yes         | Yes           | Yes         | Yes         | No          | Yes         | No          | No          | Yes         | Yes         | **Yes**        |
+| **Developer Experience Focus**| Power User  | Efficiency  | Visual Mgmt.  | UI Ext.     | Integrated  | All-in-one  | Network Debug| SRE Platform| FinOps      | DevOps Plat.| Visual Mgmt.| **AI-Augmented Terminal** |
+
+---
+
+<a name="unique_selling_proposition_usp"></a>
+## Unique Selling Proposition (USP)
+
+Chibi distinguishes itself from existing solutions by offering a revolutionary, AI-native Kubernetes SRE experience directly within the terminal. Our core USP is built around three technically realistic and highly impactful features that no current Kubernetes CLI or AI CLI provides in a unified, deeply integrated manner.
+
+### Revolutionary Feature 1: Predictive Incident Analysis with Autonomous Remediation
+
+**Concept:** Chibi will leverage a sophisticated AI reasoning engine to continuously monitor Kubernetes clusters, not just for current anomalies, but to predict potential incidents *before* they occur. Upon prediction, it will autonomously generate and propose remediation strategies, and with user confirmation, execute them, effectively preventing downtime.
+
+**Architecture:** This feature will integrate Chibi's AI Layer with the Kubernetes Layer and Telemetry components. The AI Reasoning Engine will consume real-time metrics, logs, and event data from the cluster, building a predictive model of cluster health. It will identify patterns indicative of impending failures (e.g., resource exhaustion trends, unusual pod restart patterns, network latency spikes preceding service degradation). Upon detecting a high-probability threat, the Reasoning Engine will consult a knowledge base of SRE playbooks and dynamically generate a remediation plan. This plan, potentially involving scaling adjustments, resource reallocations, or configuration changes, will be presented to the user for approval. Once approved, Chibi's Command Dispatcher will execute the necessary `kubectl` or API calls.
+
+**Developer Benefits:**
+
+*   **Zero Downtime:** Proactive prevention of incidents significantly reduces or eliminates unplanned downtime.
+*   **Reduced Alert Fatigue:** Engineers are notified of potential issues with actionable, pre-analyzed solutions, rather than raw alerts.
+*   **Accelerated MTTR (Mean Time To Resolution):** Even if an incident is not fully prevented, the AI-generated diagnosis and remediation plan drastically cuts down investigation and resolution time.
+*   **Knowledge Transfer:** The AI's explanations of predictions and remediations serve as a continuous learning tool for SREs.
+
+**Why Competitors Don't Offer It:** Existing AI SRE platforms (like SRExpert or Komodor) offer AI-driven troubleshooting *after* an incident occurs. They focus on root cause analysis and suggesting fixes for existing problems. No current tool provides a truly *predictive* capability with autonomous, user-approved remediation directly within a terminal-native CLI. Their AI often operates at a higher abstraction layer or requires manual correlation of data, lacking the deep, real-time, and actionable integration Chibi proposes.
+
+### Revolutionary Feature 2: Context-Aware, Multi-Provider AI Abstraction for Optimal SRE Actions
+
+**Concept:** Chibi will dynamically select and orchestrate the most suitable AI provider (e.g., OpenAI, Claude, Gemini, local models) for a given Kubernetes SRE task, based on the specific context, cost, latency requirements, and the nature of the problem. This abstraction layer ensures that engineers always get the best AI assistance without needing to manually choose or configure providers.
+
+**Architecture:** The AI Abstraction Layer, Provider Router, and Provider Selection components will be central to this feature. When an SRE task requires AI (e.g., diagnosing a `CrashLoopBackOff` or generating a `Deployment` YAML), Chibi will analyze the request's complexity, sensitivity, required response time, and potential cost. The Provider Router will then intelligently dispatch the request to the optimal AI backend. For instance, a complex diagnostic might go to a powerful, higher-latency model, while a quick YAML generation could use a faster, cheaper model or even a local, fine-tuned model. This system will also manage token optimization and conversation memory across providers seamlessly.
+
+**Developer Benefits:**
+
+*   **Optimal AI Performance:** Always utilizes the best-suited AI for the task, ensuring accuracy, speed, and cost-effectiveness.
+*   **Simplified AI Integration:** Developers interact with a single, unified AI interface within Chibi, abstracting away the complexities of multiple AI providers.
+*   **Future-Proofing:** Easily integrates new AI models and providers as they emerge, without requiring changes to the core CLI or user workflow.
+*   **Cost Efficiency:** Intelligent routing minimizes expenditure on expensive models for simpler tasks.
+
+**Why Competitors Don't Offer It:** While some tools support multiple AI providers (like SRExpert), they typically require manual selection or configuration, or use a single, fixed provider. No existing solution offers a dynamic, context-aware AI abstraction layer that intelligently *orchestrates* multiple AI models based on real-time task requirements and operational parameters directly within a terminal environment. This level of intelligent routing and optimization is unique to Chibi's vision.
+
+### Revolutionary Feature 3: Interactive, AI-Driven Terminal Rendering Engine with Real-time Contextual Visualizations
+
+**Concept:** Chibi will feature an advanced Terminal Rendering Engine that goes beyond static text output. It will dynamically generate rich, interactive visualizations (e.g., Mermaid diagrams for architecture, live resource graphs, dependency trees) directly within the terminal, updating in real-time based on AI analysis and user interaction. This provides a deeply immersive and intuitive understanding of the Kubernetes environment without ever leaving the terminal.
+
+**Architecture:** The Terminal Rendering Engine will be a core component, tightly integrated with the AI Layer and Kubernetes Layer. When Chibi diagnoses an issue, explains a resource, or visualizes a workflow, the AI will generate not just textual explanations but also structured data for rendering. This data will be fed to the Terminal Renderer, which will dynamically create interactive ASCII or Unicode-based visualizations. For example, a `chibi graph deployment my-app` command could render a live dependency graph of `my-app` and its related services, pods, and volumes, with color-coding for status. Users could then interact with this graph (e.g., hover for details, click to drill down) using keyboard shortcuts, triggering further AI analysis or `kubectl` commands.
+
+**Developer Benefits:**
+
+*   **Unprecedented Clarity:** Complex Kubernetes relationships and states are immediately understandable through visual representation, reducing cognitive load.
+*   **Faster Debugging:** Visual cues and interactive exploration accelerate the identification of root causes and problem areas.
+*   **Enhanced Learning:** New engineers can quickly grasp Kubernetes concepts by visually interacting with their cluster.
+*   **True Terminal Immersion:** Eliminates the need to switch to external GUI tools or dashboards for visual insights, maintaining flow state.
+
+**Why Competitors Don't Offer It:** While some tools (like k9s) offer TUIs, and others (like Lens, Headlamp, Radar) provide graphical UIs, none integrate dynamic, AI-driven, *interactive* visualizations directly within the terminal to this extent. Existing terminal tools are largely text-based or offer static visualizations. Web-based dashboards require context switching. Chibi's approach combines the power of AI with the efficiency of the terminal to create a truly revolutionary visual and interactive SRE experience.
+
+---
+
+<a name="product_requirements_document_prd"></a>
+## Product Requirements Document (PRD)
+
+This Product Requirements Document outlines the core functionalities, user experience, and business objectives for Chibi, the AI Kubernetes SRE assistant. It serves as a guiding document for the development team, ensuring alignment with the project vision and user needs.
+
+### Product Goals
+
+1.  **Simplify Kubernetes Operations:** Reduce the complexity associated with managing and troubleshooting Kubernetes clusters for developers and SREs.
+2.  **Enhance Developer Productivity:** Provide intelligent assistance that automates repetitive tasks, accelerates debugging, and minimizes context switching.
+3.  **Improve Cluster Reliability:** Proactively identify and mitigate potential issues, leading to increased uptime and reduced incident frequency.
+4.  **Democratize Kubernetes Expertise:** Make advanced Kubernetes operations accessible to a broader audience through intuitive AI-driven interactions.
+5.  **Foster an Open-Source Ecosystem:** Build a robust, extensible platform that encourages community contributions and integrations.
+
+### User Personas
+
+#### 1. Alice, the Application Developer
+Focuses on writing and deploying microservices. Has basic Kubernetes knowledge but struggles with complex YAMLs and debugging cluster-level issues. Needs quick feedback on deployment status, easy access to application logs, simplified YAML generation, clear explanations of Kubernetes concepts, faster troubleshooting of application-related problems.
+
+#### 2. Bob, the Site Reliability Engineer (SRE)
+Responsible for the health, performance, and reliability of Kubernetes clusters. Deep expertise in Kubernetes, networking, and observability. Needs advanced diagnostic tools, real-time cluster insights, proactive incident detection, automated remediation capabilities, multi-cluster visibility, efficient incident response workflows.
+
+#### 3. Carol, the Platform Engineer
+Manages the Kubernetes platform, including infrastructure, tooling, and security. Focuses on standardization, governance, and developer experience. Needs extensible platform for custom integrations, robust security features, clear audit trails, consistent operational workflows, tools to enforce best practices, simplified onboarding for new developers.
+
+### Functional Requirements
+
+1.  **AI-Powered Command Execution:** Users shall be able to issue natural language commands for Kubernetes operations. Chibi shall translate natural language commands into appropriate `kubectl` commands or API calls.
+2.  **Intelligent Diagnostics and Troubleshooting:** Chibi shall analyze cluster state, logs, events, and metrics to diagnose issues. Chibi shall provide clear, concise explanations of diagnosed problems and their root causes.
+3.  **Resource Generation and Modification:** Users shall be able to request the generation of Kubernetes manifests via natural language. Chibi shall generate valid and idiomatic YAML/JSON based on user input and best practices.
+4.  **Contextual Information Retrieval:** Chibi shall provide on-demand explanations of Kubernetes objects, concepts, and events.
+5.  **Interactive Terminal Visualizations:** Chibi shall render dynamic, interactive diagrams directly within the terminal for architecture, workflows, and resource relationships.
+6.  **Multi-Cluster Management:** Users shall be able to manage and switch between multiple Kubernetes clusters seamlessly.
+7.  **AI Provider Abstraction:** Chibi shall intelligently select the optimal AI provider for a given task based on context, cost, and performance requirements.
+8.  **Plugin System:** Chibi shall provide a robust plugin system allowing community and enterprise extensions.
+9.  **Logging and Auditing:** Chibi shall log all user interactions, AI responses, and executed commands for auditing and debugging purposes.
+
+---
+
+<a name="technical_requirements_document_trd"></a>
+## Technical Requirements Document (TRD)
+
+This Technical Requirements Document details the architectural decisions, technology choices, and engineering considerations for the Chibi project. It provides the technical foundation for implementing the product requirements outlined in the PRD.
+
+### Technology Choices
+
+*   **Programming Language:** Go
+*   **Terminal UI Framework:** Bubble Tea, Lip Gloss, Bubbles
+*   **CLI Framework:** Cobra
+*   **Configuration Management:** Viper
+*   **Kubernetes Client Library:** `client-go`
+*   **YAML Processing:** `go-yaml`
+*   **Logging:** Zap
+*   **Caching:** Ristretto
+*   **Testing Framework:** Go Test
+*   **CI/CD:** GitHub Actions
+*   **Containerization:** Docker
+*   **Documentation:** MkDocs or Docusaurus
+*   **Diagramming:** Mermaid
+
+### Performance Targets
+
+*   **CLI Startup Time:** < 2 seconds (from execution to first interactive prompt).
+*   **Kubernetes API Call Latency:** Average < 100ms for standard `get` operations; < 500ms for complex `list` operations on large clusters.
+*   **AI Response Time (Simple Queries):** < 3 seconds (e.g., explaining a single resource).
+*   **AI Response Time (Complex Queries):** < 10 seconds (e.g., diagnosing a multi-component issue, generating complex YAML), with streaming output providing immediate feedback.
+*   **Terminal Rendering Latency:** Interactive visualizations should render within 500ms for typical data sets.
+*   **Memory Footprint:** Idle: < 100MB; Peak (during AI processing/large data rendering): < 500MB.
+
+### Security
+
+Security will be a paramount concern, integrated into every layer of Chibi. Chibi will strictly adhere to the Kubernetes RBAC policies configured for the user's `kubeconfig` context. The AI Layer will incorporate techniques to detect and mitigate prompt injection attacks, ensuring that malicious inputs do not lead to unauthorized actions or data exposure. The Plugin Layer will implement a robust sandboxing mechanism to prevent plugins from accessing unauthorized resources or performing malicious operations.
+
+---
+
+<a name="system_architecture"></a>
+## System Architecture
+
+Chibi's architecture is designed for modularity, extensibility, performance, and intelligent operation within a terminal-native environment. It integrates various components to provide a seamless AI-powered Kubernetes SRE experience.
+
+### Overall Architecture Overview
+
+Chibi operates as a sophisticated CLI application, orchestrating interactions between the user, Kubernetes clusters, and multiple AI providers. Its core design emphasizes a clear separation of concerns, allowing for independent development and evolution of its key layers.
+
+### Overall System Architecture Diagram
+
+![Chibi System Architecture](https://private-us-east-1.manuscdn.com/sessionFile/3RqiIVaihDp8zlwK1OIjik/sandbox/KabkpwByyHVcEmcCmTSRBW-images_1784781891089_na1fn_L2hvbWUvdWJ1bnR1L2NoaWJpX3N5c3RlbV9hcmNoaXRlY3R1cmVfZGlhZ3JhbQ.png?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvM1JxaUlWYWloRHA4emx3SzFPSWppay9zYW5kYm94L0thYmtwd0J5eUhWY0VtY0NtVFNSQlctaW1hZ2VzXzE3ODQ3ODE4OTEwODlfbmExZm5fTDJodmJXVXZkV0oxYm5SMUwyTm9hV0pwWDNONWMzUmxiVjloY21Ob2FYUmxZM1IxY21WZlpHbGhaM0poYlEucG5nIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzg2NzUyMDAwfX19XX0_&Key-Pair-Id=K2QY5QTL8JSY6C&Signature=MEUCIGcbX8v8CY2mccqioF2ySd-9pTxRKMOFl1b6vVc~my7hAiEAmjbWYlFLE-TEUr6URIVTG6Gpc74wZVCsqzGIfjVOdXA_)
+
+### User Command Request Flow
+
+![User Command Request Flow](https://private-us-east-1.manuscdn.com/sessionFile/3RqiIVaihDp8zlwK1OIjik/sandbox/KabkpwByyHVcEmcCmTSRBW-images_1784781891089_na1fn_L2hvbWUvdWJ1bnR1L2NoaWJpX3VzZXJfY29tbWFuZF9yZXF1ZXN0X2Zsb3c.png?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvM1JxaUlWYWloRHA4emx3SzFPSWppay9zYW5kYm94L0thYmtwd0J5eUhWY0VtY0NtVFNSQlctaW1hZ2VzXzE3ODQ3ODE4OTEwODlfbmExZm5fTDJodmJXVXZkV0oxYm5SMUwyTm9hV0pwWDNWelpYSmZZMjl0YldGdVpGOXlaWEYxWlhOMFgyWnNiM2MucG5nIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzg2NzUyMDAwfX19XX0_&Key-Pair-Id=K2QY5QTL8JSY6C&Signature=MEYCIQCf7VwVKH16pFI8OzMzxAN2rOq7vhEy1XEKVxXmW~6mxwIhAMzvQEcQlNK2chqeeJdcyhcXOTG4jJH-hpLwTygwasDl)
+
+### AI Layer Internal Workflow
+
+![AI Layer Internal Workflow](https://private-us-east-1.manuscdn.com/sessionFile/3RqiIVaihDp8zlwK1OIjik/sandbox/KabkpwByyHVcEmcCmTSRBW-images_1784781891089_na1fn_L2hvbWUvdWJ1bnR1L2NoaWJpX2FpX2xheWVyX3dvcmtmbG93.png?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvM1JxaUlWYWloRHA4emx3SzFPSWppay9zYW5kYm94L0thYmtwd0J5eUhWY0VtY0NtVFNSQlctaW1hZ2VzXzE3ODQ3ODE4OTEwODlfbmExZm5fTDJodmJXVXZkV0oxYm5SMUwyTm9hV0pwWDJGcFgyeGhlV1Z5WDNkdmNtdG1iRzkzLnBuZyIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc4Njc1MjAwMH19fV19&Key-Pair-Id=K2QY5QTL8JSY6C&Signature=MEUCIQCeLCCfRsR5Mny3TarrFE1LoEXgNUCiZzPBPxS~~~VcRAIgDoIkqJ8hX2Pl3hgIIJ0n1jd243PqL4kj4m8RZP0dMkY_)
+
+### Predictive Incident Analysis and Autonomous Remediation Workflow
+
+![Predictive Incident Analysis and Autonomous Remediation Workflow](https://private-us-east-1.manuscdn.com/sessionFile/3RqiIVaihDp8zlwK1OIjik/sandbox/KabkpwByyHVcEmcCmTSRBW-images_1784781891089_na1fn_L2hvbWUvdWJ1bnR1L2NoaWJpX3ByZWRpY3RpdmVfaW5jaWRlbnRfd29ya2Zsb3c.png?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvM1JxaUlWYWloRHA4emx3SzFPSWppay9zYW5kYm94L0thYmtwd0J5eUhWY0VtY0NtVFNSQlctaW1hZ2VzXzE3ODQ3ODE4OTEwODlfbmExZm5fTDJodmJXVXZkV0oxYm5SMUwyTm9hV0pwWDNCeVpXUnBZM1JwZG1WZmFXNWphV1JsYm5SZmQyOXlhMlpzYjNjLnBuZyIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc4Njc1MjAwMH19fV19&Key-Pair-Id=K2QY5QTL8JSY6C&Signature=MEUCIA~965rvLSojLKeZ-7QqwQbLf86l-~Bi5De3oU6-cHzRAiEAvH0KVFaQs8AnnvooXmhK5QLwP~Ex49aq5hnE~kaduVw_)
+
+---
+
+<a name="core_components"></a>
+## Core Components
+
+This section provides a detailed description of Chibi's core components, outlining their functionalities, interactions, and technical considerations.
+
+### 1. AI System
+The brain of Chibi, responsible for understanding user intent, diagnosing issues, generating solutions, and orchestrating interactions with various AI models. It includes the AI Abstraction Layer, Provider Router, Context Builder, Reasoning Engine, and Prompt Pipeline.
+
+### 2. Kubernetes Engine
+Chibi's dedicated interface for interacting with Kubernetes clusters. It abstracts the complexities of the Kubernetes API, providing a reliable and efficient way to manage and observe cluster resources. It integrates `client-go` and handles resource management, data retrieval, and multi-cluster context.
+
+### 3. CLI User Experience (CLI UX)
+Focuses on creating an intuitive, efficient, and visually engaging terminal experience. It combines robust command-line parsing with rich, interactive UI elements and intelligent feedback. It includes the Command Parser, Interactive TUI, Terminal Rendering Engine, and feedback mechanisms.
+
+### 4. Plugins
+Designed to make Chibi highly extensible, allowing the community and enterprises to add new functionalities, integrate with external tools, and customize behavior without modifying the core codebase. It provides a Go-based SDK, runtime, and security sandboxing.
+
+---
+
+<a name="operational_standards"></a>
+## Operational Standards
+
+This section outlines the operational standards and principles that will govern the development, deployment, and maintenance of the Chibi project.
+
+### 1. Open Source Principles
+Chibi is committed to being an open-source project, released under a permissive license (e.g., Apache 2.0 or MIT License). All development activities will be conducted publicly on platforms like GitHub, with clear contribution guidelines and an inclusive governance model.
+
+### 2. Technology Stack Guidelines
+Go is the primary programming language, with the Bubble Tea ecosystem for TUI and Cobra for CLI structure. Dependency management will use Go Modules, and all code will undergo thorough review and automated testing.
+
+### 3. Security Policies
+Security is integrated throughout the development lifecycle, including threat modeling, security reviews, and vulnerability management. Strict data handling and privacy policies will be enforced, with a focus on protecting against prompt injection and ensuring secure plugin execution.
+
+---
+
+<a name="version_planning"></a>
+## Version Planning
+
+Chibi's development will follow a phased approach, with each major version introducing significant new capabilities while refining existing ones.
+
+### Version 1 (Initial Release)
+Focuses on establishing Chibi as a powerful, AI-native Kubernetes SRE assistant. Key features include AI-powered command execution, intelligent diagnostics, basic resource generation, contextual information retrieval, and initial interactive terminal visualizations.
+
+### Version 2 (Enhancement & Predictive Capabilities)
+Introduces advanced predictive capabilities and deeper AI integration. Key features include predictive incident analysis with autonomous remediation, AI-driven cost optimization insights, enhanced multi-provider AI abstraction, and rich interactive visualizations.
+
+---
+
+<a name="the_chibi_manifesto"></a>
+## The Chibi Manifesto
+
+We, the creators and contributors of Chibi, believe in a future where managing Kubernetes is intuitive, intelligent, and empowering. Our mission is to transform the complex landscape of cloud-native operations into a streamlined, delightful experience for every developer and SRE.
+
+**We commit to:**
+1. **Empowering the Engineer:** To build tools that amplify human intelligence, not replace it.
+2. **AI-Native by Design:** To deeply integrate artificial intelligence into the very fabric of Kubernetes operations.
+3. **Terminal-First Philosophy:** To champion the efficiency, speed, and flow state of the command line.
+4. **Open Source for All:** To foster a vibrant, inclusive, and transparent open-source community.
+5. **Security and Trust:** To prioritize the security, privacy, and reliability of our users' Kubernetes environments.
+6. **Continuous Innovation:** To relentlessly pursue new ways to simplify, optimize, and secure Kubernetes operations.
+
+Chibi is more than just a tool; it is a declaration of a new era for Kubernetes SRE. Join us in building the future of Kubernetes management.
+
+---
+
+## References
+
+[1] Kubernetes. (n.d.). *kubectl Overview*. Retrieved from [https://kubernetes.io/docs/reference/kubectl/overview/](https://kubernetes.io/docs/reference/kubectl/overview/)
+[2] k9s. (n.d.). *k9s - Kubernetes CLI To Manage Your Clusters In Style!*. Retrieved from [https://k9scli.io/](https://k9scli.io/)
+[3] Lens. (n.d.). *The Kubernetes IDE*. Retrieved from [https://k8slens.dev/](https://k8slens.dev/)
+[4] Headlamp. (n.d.). *An extensible Kubernetes UI*. Retrieved from [https://headlamp.dev/](https://headlamp.dev/)
+[5] Radar. (n.d.). *Radar - The Kubernetes UI*. Retrieved from [https://radarhq.io/](https://radarhq.io/)
+[6] SRExpert. (n.d.). *Unified Kubernetes Management Platform*. Retrieved from [https://srexpert.io/](https://srexpert.io/)
+[7] Kubeshark. (n.d.). *API Traffic Viewer for Kubernetes*. Retrieved from [https://kubeshark.co/](https://kubeshark.co/)
+[8] Komodor. (n.d.). *Autonomous AI SRE Platform for Kubernetes*. Retrieved from [https://komodor.com/](https://komodor.com/)
+[9] Kubecost. (n.d.). *Kubernetes Cost Monitoring & Optimization*. Retrieved from [https://www.kubecost.com/](https://www.kubecost.com/)
+[10] Devtron. (n.d.). *AI-Native Kubernetes Management Platform*. Retrieved from [https://devtron.ai/](https://devtron.ai/)
+[11] Portainer. (n.d.). *Universal Container Management Platform*. Retrieved from [https://www.portainer.io/](https://www.portainer.io/)
+[12] Aider. (n.d.). *AI pair programming in your terminal*. Retrieved from [https://aider.chat/](https://aider.chat/)
+[13] OpenCode. (n.d.). *Open-source AI coding agent*. Retrieved from [https://github.com/opencode/opencode](https://github.com/opencode/opencode)
+[14] Apache License 2.0. (n.d.). Retrieved from [https://www.apache.org/licenses/LICENSE-2.0](https://www.apache.org/licenses/LICENSE-2.0)
+[15] MIT License. (n.d.). Retrieved from [https://opensource.org/licenses/MIT](https://opensource.org/licenses/MIT)
+[16] Go Modules. (n.d.). Retrieved from [https://go.dev/blog/using-go-modules](https://go.dev/blog/using-go-modules)
+[17] Gofmt. (n.d.). Retrieved from [https://pkg.go.dev/cmd/gofmt](https://pkg.go.dev/cmd/gofmt)
+[18] Golangci-lint. (n.d.). Retrieved from [https://golangci-lint.run/](https://golangci-lint.run/)
+[19] Semantic Versioning 2.0.0. (n.d.). Retrieved from [https://semver.org/spec/v2.0.0.html](https://semver.org/spec/v2.0.0.html)

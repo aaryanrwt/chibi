@@ -1,0 +1,19 @@
+graph TD
+    A[Kubernetes Cluster Telemetry] --> B(AI Reasoning Engine)
+    B --> C{Predictive Model}
+    C -- Anomaly Detected --> D(Remediation Strategy Generation)
+    D --> E(User Confirmation)
+    E -- Approved --> F(Command Dispatcher)
+    E -- Rejected --> G(Notify User)
+    F --> H(Kubernetes API)
+    H --> I[Remediation Executed]
+
+    style A fill:#cfc,stroke:#333,stroke-width:2px
+    style B fill:#ffc,stroke:#333,stroke-width:2px
+    style C fill:#f99,stroke:#333,stroke-width:2px
+    style D fill:#ff9,stroke:#333,stroke-width:2px
+    style E fill:#bbf,stroke:#333,stroke-width:2px
+    style F fill:#ccf,stroke:#333,stroke-width:2px
+    style G fill:#f9f,stroke:#333,stroke-width:2px
+    style H fill:#9cf,stroke:#333,stroke-width:2px
+    style I fill:#aaffaa,stroke:#333,stroke-width:2px

@@ -1,0 +1,37 @@
+graph TD
+    A[User] --> B(CLI & UI Layer)
+    B --> C(Core Engine)
+    C --> D(AI Layer)
+    C --> E(Kubernetes Layer)
+    C --> F(Plugin Layer)
+
+    D --> G(AI Abstraction Layer)
+    G --> H(Provider Router)
+    H --> I(AI Providers)
+
+    E --> J(Kubernetes API)
+
+    B --> K(Rendering Engine)
+    K --> L(Terminal UI)
+
+    C --> M(Configuration Layer)
+    C --> N(Telemetry)
+    C --> O(Logging)
+    C --> P(Caching)
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style B fill:#bbf,stroke:#333,stroke-width:2px
+    style C fill:#ccf,stroke:#333,stroke-width:2px
+    style D fill:#ffc,stroke:#333,stroke-width:2px
+    style E fill:#cfc,stroke:#333,stroke-width:2px
+    style F fill:#fcf,stroke:#333,stroke-width:2px
+    style G fill:#ff9,stroke:#333,stroke-width:2px
+    style H fill:#f99,stroke:#333,stroke-width:2px
+    style I fill:#99f,stroke:#333,stroke-width:2px
+    style J fill:#9cf,stroke:#333,stroke-width:2px
+    style K fill:#bbf,stroke:#333,stroke-width:2px
+    style L fill:#bbf,stroke:#333,stroke-width:2px
+    style M fill:#eee,stroke:#333,stroke-width:2px
+    style N fill:#eee,stroke:#333,stroke-width:2px
+    style O fill:#eee,stroke:#333,stroke-width:2px
+    style P fill:#eee,stroke:#333,stroke-width:2px

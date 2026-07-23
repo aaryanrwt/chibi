@@ -1,0 +1,56 @@
+# Go workspace
+bin/
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+cover.out
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+.cursor/
+.zed/
+.fleet/
+
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Secrets & Configs
+.env
+.env.local
+.env.production
+.env.development
+.env.test
+*.pem
+*.key
+kubeconfig
+kubeconfig.yaml
+secret.yaml
+credentials.json
+
+# Databases & Cache
+*.sqlite
+*.sqlite3
+*.db
+.cache/
+
+# AI Data
+prompt_history.json
+model_cache/
+embeddings.bin
+
+# Logs & Build
+*.log
+crash.dump
+dist/
+out/
+release/
+temp/

@@ -1,0 +1,27 @@
+graph TD
+    A[User Input Command] --> B{CLI Parser}
+    B -- Valid Command --> C(Core Engine)
+    C -- Natural Language --> D(AI Layer)
+    C -- Kubernetes Operation --> E(Kubernetes Layer)
+    C -- Plugin Command --> F(Plugin Layer)
+
+    D -- AI Response/Action --> C
+    E -- K8s API Call --> G(Kubernetes API)
+    G -- K8s Response --> E
+    E -- K8s Data/Status --> C
+    F -- Plugin Action/Data --> C
+
+    C -- Orchestrate Response --> H(Rendering Engine)
+    H --> I(Terminal UI)
+    I --> J[Display Output to User]
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style B fill:#bbf,stroke:#333,stroke-width:2px
+    style C fill:#ccf,stroke:#333,stroke-width:2px
+    style D fill:#ffc,stroke:#333,stroke-width:2px
+    style E fill:#cfc,stroke:#333,stroke-width:2px
+    style F fill:#fcf,stroke:#333,stroke-width:2px
+    style G fill:#9cf,stroke:#333,stroke-width:2px
+    style H fill:#bbf,stroke:#333,stroke-width:2px
+    style I fill:#bbf,stroke:#333,stroke-width:2px
+    style J fill:#f9f,stroke:#333,stroke-width:2px

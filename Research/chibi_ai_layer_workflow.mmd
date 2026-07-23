@@ -1,0 +1,14 @@
+graph TD
+    A[User Request] --> B(Context Builder)
+    B --> C(Prompt Pipeline)
+    C --> D{Provider Router}
+    D -- Select Optimal Provider --> E(AI Provider 1)
+    D -- Select Optimal Provider --> F(AI Provider 2)
+    D -- Select Optimal Provider --> G(Local AI Model)
+
+    E --> H(AI Response)
+    F --> H
+    G --> H
+
+    H --> I(Reasoning Engine)
+    I --> J(AI Response/Action)
