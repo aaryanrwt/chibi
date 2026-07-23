@@ -5,7 +5,6 @@
   [![Go Version](https://img.shields.io/github/go-mod/go-version/aaryanrwt/chibi)](https://golang.org/doc/devel/release.html)
   [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
   [![Chibi CI](https://github.com/aaryanrwt/chibi/actions/workflows/ci.yml/badge.svg)](https://github.com/aaryanrwt/chibi/actions/workflows/ci.yml)
-  [![Release](https://img.shields.io/github/v/release/aaryanrwt/chibi?label=Stable)](https://github.com/aaryanrwt/chibi/releases)
   [![Stars](https://img.shields.io/github/stars/aaryanrwt/chibi?style=social)](https://github.com/aaryanrwt/chibi/stargazers)
   [![Open Source](https://img.shields.io/badge/Open%20Source-Yes-red)](https://github.com/aaryanrwt/chibi)
   [![2026 Edition](https://img.shields.io/badge/Edition-2026-black)](#)
