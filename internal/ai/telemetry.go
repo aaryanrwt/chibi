@@ -1,8 +1,8 @@
 package ai
 
 import (
-	"fmt"
 	"chibi/internal/observability"
+	"fmt"
 )
 
 // TelemetryCorrelator merges raw Kubernetes manifests with Prometheus time-series data.
@@ -17,7 +17,7 @@ func NewTelemetryCorrelator(promClient *observability.PrometheusClient) *Telemet
 }
 
 // BuildCorrelatedContext creates a combined context block containing both object state and metrics.
-func (t *TelemetryCorrelator) BuildCorrelatedContext(namespace, podName string, resourceContext string) string {
+func (t *TelemetryCorrelator) BuildCorrelatedContext(_, _ string, resourceContext string) string {
 	metricInfo := "Metrics unavailable (Prometheus not configured)"
 	if t.promClient != nil {
 		// For V2 MVP, we simulate parsing the complex PromQL return value

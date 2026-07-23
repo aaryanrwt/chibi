@@ -25,7 +25,7 @@ var rootCmd = &cobra.Command{
 	Long: `Chibi empowers Kubernetes engineers with an intuitive, powerful, 
 and intelligent terminal experience that simplifies complex operations 
 and accelerates troubleshooting.`,
-	PersistentPreRunE: func(cmd *cobra.Command, args []string) error {
+	PersistentPreRunE: func(_ *cobra.Command, _ []string) error {
 		// Initialize Config
 		if err := config.InitConfig(cfgFile); err != nil {
 			return err
@@ -44,7 +44,7 @@ and accelerates troubleshooting.`,
 		}
 		return nil
 	},
-	Run: func(cmd *cobra.Command, args []string) {
+	Run: func(_ *cobra.Command, _ []string) {
 		telemetry.Log.Info("Starting Chibi TUI...")
 
 		engine := ai.NewEngine()

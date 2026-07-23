@@ -9,10 +9,10 @@ import (
 type Provider interface {
 	// Name returns the name of the provider (e.g., "openai", "anthropic").
 	Name() string
-	
+
 	// Generate generates a response for a given system prompt and user prompt.
 	Generate(ctx context.Context, systemPrompt, userPrompt string) (string, error)
-	
+
 	// GenerateStream returns a channel that streams the response.
 	GenerateStream(ctx context.Context, systemPrompt, userPrompt string) (<-chan string, error)
 }

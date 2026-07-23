@@ -24,10 +24,10 @@ type aiResponseMsg string
 type errMsg error
 
 type model struct {
-	textInput textinput.Model
-	messages  []string
-	err       error
 	engine    *ai.Engine
+	err       error
+	messages  []string
+	textInput textinput.Model
 }
 
 func initialModel(engine *ai.Engine) model {
@@ -103,10 +103,6 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 
 	case aiResponseMsg:
 		m.messages = append(m.messages, fmt.Sprintf("Chibi: %s", string(msg)))
-		return m, nil
-
-	case errMsg:
-		m.err = msg
 		return m, nil
 
 	case error:

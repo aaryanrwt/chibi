@@ -10,23 +10,23 @@ import (
 	"github.com/tetratelabs/wazero/imports/wasi_snapshot_preview1"
 )
 
-// WasmManager handles the discovery and highly-secure execution of WASM plugins.
-type WasmManager struct {
+// Manager handles the discovery and highly-secure execution of WASM plugins.
+type Manager struct {
 	pluginDir string
 }
 
-func NewWasmManager(pluginDir string) *WasmManager {
+func NewManager(pluginDir string) *Manager {
 	if pluginDir == "" {
 		home, _ := os.UserHomeDir()
 		pluginDir = filepath.Join(home, ".chibi", "plugins", "wasm")
 	}
-	return &WasmManager{
+	return &Manager{
 		pluginDir: pluginDir,
 	}
 }
 
 // ExecutePlugin loads a .wasm file and executes it in a zero-trust sandbox.
-func (m *WasmManager) ExecutePlugin(ctx context.Context, name string, args []string) (string, error) {
+func (m *Manager) ExecutePlugin(ctx context.Context, name string, _ []string) (string, error) {
 	wasmPath := filepath.Join(m.pluginDir, fmt.Sprintf("%s.wasm", name))
 	wasmBytes, err := os.ReadFile(wasmPath)
 	if err != nil {

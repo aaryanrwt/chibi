@@ -8,7 +8,7 @@ import (
 var configCmd = &cobra.Command{
 	Use:   "config",
 	Short: "Manage Chibi configuration",
-	Run: func(cmd *cobra.Command, args []string) {
+	Run: func(_ *cobra.Command, _ []string) {
 		fmt.Println("Configuration loaded.")
 	},
 }

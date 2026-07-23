@@ -5,7 +5,7 @@ import (
 	"fmt"
 )
 
-// ContextBuilder is responsible for taking raw Kubernetes objects and 
+// ContextBuilder is responsible for taking raw Kubernetes objects and
 // converting them into an optimized prompt representation.
 type ContextBuilder struct {
 }
@@ -17,7 +17,7 @@ func NewContextBuilder() *ContextBuilder {
 // BuildResourceContext converts a K8s resource (like a Pod) into a minimal JSON string.
 // In a production scenario, we would strip out noisy fields like managedFields.
 func (c *ContextBuilder) BuildResourceContext(resource interface{}) (string, error) {
-	// For V1, a simple JSON marshal is often enough. 
+	// For V1, a simple JSON marshal is often enough.
 	// We can implement recursive map cleanup to remove "managedFields" if necessary.
 	bytes, err := json.MarshalIndent(resource, "", "  ")
 	if err != nil {

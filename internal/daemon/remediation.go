@@ -17,10 +17,10 @@ func NewAutoRemediator(enabled bool) *AutoRemediator {
 }
 
 // EvaluateAndApply checks a proposed patch against safety policies.
-func (r *AutoRemediator) EvaluateAndApply(ctx context.Context, patch string, resourceType string) (string, error) {
+func (r *AutoRemediator) EvaluateAndApply(_ context.Context, _ string, resourceType string) (string, error) {
 	// For V2 MVP, we simulate a strict policy check.
 	// We only allow "Deployment" restarts natively without user confirmation.
-	
+
 	if !r.autoApplyEnabled {
 		return "", fmt.Errorf("auto-remediation is disabled (Dry-Run mode)")
 	}

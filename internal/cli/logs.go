@@ -8,7 +8,7 @@ import (
 var logsCmd = &cobra.Command{
 	Use:   "logs",
 	Short: "Stream intelligent logs",
-	Run: func(cmd *cobra.Command, args []string) {
+	Run: func(_ *cobra.Command, _ []string) {
 		fmt.Println("Streaming logs...")
 	},
 }

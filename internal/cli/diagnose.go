@@ -8,7 +8,7 @@ import (
 var diagnoseCmd = &cobra.Command{
 	Use:   "diagnose",
 	Short: "Run an AI diagnosis on a resource",
-	Run: func(cmd *cobra.Command, args []string) {
+	Run: func(_ *cobra.Command, _ []string) {
 		fmt.Println("Diagnosis complete. No issues found.")
 	},
 }

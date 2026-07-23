@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"time"
 
+	// Register SQLite driver.
 	_ "modernc.org/sqlite"
 
 	"chibi/internal/k8s"

@@ -17,6 +17,6 @@ func RenderDashboard() string {
 	b.WriteString("\nCPU Usage Trend:\n")
 	b.WriteString(sparklineStyle.Render(" ▂▃▄▅▆▇█▇▆▅▄▃▂ "))
 	b.WriteString("\n")
-	
+
 	return b.String()
 }

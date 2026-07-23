@@ -8,7 +8,7 @@ import (
 var doctorCmd = &cobra.Command{
 	Use:   "doctor",
 	Short: "Check system health and cluster connectivity",
-	Run: func(cmd *cobra.Command, args []string) {
+	Run: func(_ *cobra.Command, _ []string) {
 		fmt.Println("Cluster connectivity OK. AI Provider configured.")
 	},
 }

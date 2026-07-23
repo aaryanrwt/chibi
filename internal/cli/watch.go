@@ -8,7 +8,7 @@ import (
 var watchCmd = &cobra.Command{
 	Use:   "watch",
 	Short: "Start the predictive daemon",
-	Run: func(cmd *cobra.Command, args []string) {
+	Run: func(_ *cobra.Command, _ []string) {
 		fmt.Println("Watching cluster for anomalies...")
 	},
 }

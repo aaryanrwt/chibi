@@ -8,7 +8,7 @@ import (
 var pluginsCmd = &cobra.Command{
 	Use:   "plugins",
 	Short: "Manage WASM plugins",
-	Run: func(cmd *cobra.Command, args []string) {
+	Run: func(_ *cobra.Command, _ []string) {
 		fmt.Println("No WASM plugins installed.")
 	},
 }

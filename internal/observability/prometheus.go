@@ -29,12 +29,9 @@ func NewPrometheusClient(address string) (*PrometheusClient, error) {
 // GetPodCPUUsage retrieves the CPU usage for a pod over the last 5 minutes.
 func (p *PrometheusClient) GetPodCPUUsage(ctx context.Context, namespace, pod string) (model.Value, error) {
 	query := fmt.Sprintf(`rate(container_cpu_usage_seconds_total{namespace="%s", pod="%s"}[5m])`, namespace, pod)
-	result, warnings, err := p.v1api.Query(ctx, query, time.Now(), v1.WithTimeout(5*time.Second))
+	result, _, err := p.v1api.Query(ctx, query, time.Now(), v1.WithTimeout(5*time.Second))
 	if err != nil {
 		return nil, fmt.Errorf("prometheus query failed: %w", err)
-	}
-	if len(warnings) > 0 {
-		// Log warnings in a real implementation
 	}
 	return result, nil
 }
